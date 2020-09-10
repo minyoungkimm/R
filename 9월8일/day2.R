@@ -296,7 +296,7 @@ rm(list=ls())
 ls()
 load("all.rda")
 ls()
-
+getwd()
 #read file data
 #워드 단위로 읽어오고 싶을 때
 nums <- scan("data/sample_num.txt")

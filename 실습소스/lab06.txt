@@ -1,0 +1,102 @@
+# 실습 6
+
+#문제1
+exam1 <- function(){
+  alpha <- paste(LETTERS, letters, sep='')
+  return(alpha)
+}
+exam1()
+
+#문제2
+exam2 <- function(num){
+  sum <- 0
+  for(i in 1:num){
+    sum <- sum +i
+  }
+  return(sum)
+}
+exam2(5)
+exam2(10)
+
+#문제3
+exam3 <- function(p1, p2){
+  if(p1>p2) 
+    result <- p1-p2
+  else 
+    result <- p2-p1
+  return(result)
+}
+exam3(10, 20)
+exam3(20, 5)
+exam3(5, 30)
+exam3(6, 3)
+
+#문제4
+exam4 <- function(p1, p2, p3){
+  if(p2=='+'){
+    calc <- p1+p3
+  }else if(p2=='-'){
+    if(p1>p3) 
+      calc <- p1-p3
+    else 
+      calc <- p3-p1
+  }else if(p2=='*'){
+    calc <- p1*p3
+  }else if(p2=='%/%'){
+    if(p1==0)
+      calc <- '오류1'
+    else if(p3==0)
+      calc <- '오류2'
+    else
+      calc <- p1%/%p3
+  }else if(p2=='%%'){
+    if(p1==0)
+      calc <- '오류1'
+    else if(p3==0)
+      calc <- '오류2'
+    else
+      calc <- p1%%p3
+  }else 
+    calc <- '규격의 연산자만 전달하세요'
+  return(calc)  
+}
+exam4(3, '+', 7)
+exam4(5, '-', 50)
+exam4(4, '*', 7)
+exam4(0, '%/%', 10)
+exam4(20, '%/%', 0)
+exam4(50, '%/%', 2)
+exam4(0, '%%', 3)
+exam4(30, '%%', 0)
+exam4(28, '%%', 3)
+exam4(5, '#', 12)
+
+#문제5
+exam5 <- function(p1, p2='#'){
+  if(p1>0){
+    for (num in 1:p1){
+      cat(p2)
+    }
+    cat('\n')
+  }
+}
+exam5(5, )
+exam5(7, '^')
+exam5(0, '*')
+exam5(-3, '@')
+
+#문제6
+exam6 <- function(...){
+  data <- c(...)
+  for (score in data){
+    if(is.na(score)) print("NA는 처리불가")
+    else{
+      if(score>=85) grade <- '상'
+      else if(score>=70) grade <- '중'
+      else grade <- '하'
+      print(paste(score,'점은 ', grade, ' 등급입니다.', sep=''))
+    }
+  }
+}
+exam6(80, 50, 70, 66, NA, 35)
+
