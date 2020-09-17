@@ -37,10 +37,7 @@ vmSum <- function(x){
       print("숫자 벡터를 전달하세요!") 
       return(0)
     }else{
-      sum <- 0
-      for(i in x){
-        sum <- sum + i
-      }
+      sum <- sum(x)
     }
   return(sum)
   }
@@ -65,10 +62,7 @@ vmSum2 <- function(x){
       warning("숫자 벡터를 전달하세요!") 
       return(0)
     }else{
-      sum <- 0
-      for(i in x){
-        sum <- sum + i
-      }
+      sum <- sum(x)
     }
     return(sum)
   }
@@ -157,11 +151,11 @@ createVector2 <- function(...){
     character <- vector()
     logical <- vector()
     for(data in p){
-      if(class(data) == "numeric"){
+      if(is.numeric(data)){
         numeric <- c(numeric,data)
-      }else if(class(data) == "character"){
+      }else if(is.character((data))){
         character <- c(character,data)
-      }else if(class(data) == "logical"){
+      }else if(is.logical(data)){
         logical <- c(logical,data)
       }
     }

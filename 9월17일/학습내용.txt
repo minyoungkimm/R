@@ -1,0 +1,825 @@
+강사명 : 김 정현(unicodaum@hanmail.net)
+과정명 : 융복합 프로젝트형 빅데이터 분석 서비스 개발
+다음 내용을 꼼꼼히 작성한 다음에 강사 메일로 보내세요. 메일제목 : 빅데이터-사전설문-XXX
+[ 학습전 설문 ]
+(1) 성명, 전공학과(부전공 또는 복수전공 포함)
+(2) 본인이 계획하고 있는 취업 목표
+    - 대기업, 중견기업, 금융, 데이터분석 전문회사, 데이터를 다루는 IT전문회사, IT 전문회사, 아직 정하지 못함, ...
+(3) 프로그래밍 학습 경험 
+    - 언어명, 기간과 방법
+(4) 웹 프로그래밍 학습 경험
+    - HTML, CSS, JavaScript, jQuery, ASP, PHP, JSP, Flask, Django, SpringMVC
+(5) SQL 학습 경험
+    - DB 서버 종류
+(6) 분석 학습 경험
+    - R 또는 PYTHON을 활용한 데이터 수집, 데이터 전처리, 데이터 분석, 데이터 시각화
+(7) 교육관련 건의 사항
+
+
+
+[ 강사컴퓨터 접근 ]
+시작 > 실행
+\\192.168.0.200
+
+학습폴더 - c:\PYTHONexam\day1
+
+
+
+ 변수 = 데이터값, 변수, 연산식, 리턴값이 있는 함수의 호출식
+           -------------------------------------- 식
+ l-value    r-value
+ (방)           (값)
+ a = 3.14
+ result = 100  --> int
+ result = a      --> float
+ result = 10+20   --> int
+ result = len('가나다')   --> int
+ result = True   --> bool
+ 
+ 요구사항 1부터 10까지의 값을 더한 결과값에 
+ + 10  와 * 10 을 처리한 결과를 출력하시오.
+ >>> 1+2+3+4+5+6+7+8+9+10 + 10
+ >>> (1+2+3+4+5+6+7+8+9+10) * 10
+
+ >>> result = 1+2+3+4+5+6+7+8+9+10
+ >>> result + 10
+ >>> result * 10
+ >>> result = result - 10   
+ >>> result -= 10
+ 
+ +=, -=, /=, *= ....
+  "123"  '123' "#$^&" "if" "" ''
+
+ c:\PYTHONexam\day1
+
+ https://www.python.org/dev/peps/pep-0008/
+- 제어문
+   . 조건제어문 - 조건에 따른 수행 코드 결정 - if, elif, else
+   . 반복제어문 - 어떤 코드를 몇번이고 반복하려는 경우(횟수-for, 조건-while). else
+   . 분기제어문 - 이동을 결정 - break, continue
+
+   if 조건식 :
+       수행코드
+
+   if 조건식 :
+       수행코드1
+       수행코드2
+
+   ifTest1.py
+   0  --> False
+   ''   --> False
+
+  API(Application Programming Interface) 
+  미리 만들어놓은 프로그램
+
+  if True :
+  if 비교식 :
+  if 비교식1 and 비교식2 :
+  if 비교식1 or 비교식2 :
+  if 숫자타입 :
+  if 문자열타입 : 
+
+
+
+   10     2
+   "10" "2"
+
+ [ 함수 ]
+    (1) 함수의 정의 방법
+        - 기능(하나의 기능)
+           . 함수명
+           . 호출할 때 전달받을 데이터 유무-매개변수를 결정
+           . 수행결과값을 호출한 곳으로 되돌려줄거인지-리턴값을 결정
+       - def  함수명([매개변수리스트...]) :
+              코드블록
+    (2) 함수의 호출 방법
+         - 호출시 전달해야 하는 데이터 유무 - 아규먼트
+         - 리턴값의 유무에 따라서 그냥 호출만 할 것인지 호출하고나서 리턴되는 값을
+            사용할 것인지 정해 한다.
+                print()
+                data = input()
+ 
+                함수명([아규먼트...])
+
+
+
+
+
+
+
+
+  +, -, *, **, /, //, %, =, ==, !=, >, <, >=, <=, and, or, not
+  항1 + 항2
+
+
+ 
+
+   nums = [15, 3, 20]
+   minvalue = 999
+   for data in nums :
+        if minvalue > data :
+           minvalue = data
+
+   for i in range(len(nums)) :
+       if nums[i] < 10 :
+           nums[i] = 100
+
+
+스택 : LIFO(Last In First Out)-undo, function call-push/pop
+큐 : FIFO
+
+  f1() -> f2()  -> f3() -> f4()
+
+함수 호출시 아규먼트에 * 이 붙으면 *가 붙은 대상을 언패킹하여 전달한다. 
+함수 정의시 매개변수에 * 이 붙으면 *가 붙은 대상을 패킹하여 받는다. --> 가변인수
+
+
+넘겨지는 데이터의 종류에 따라서 call by reference 또는 call by value가 결정됨
+immutable object
+ex) int, float, string, tuple 
+함수 argument로 넘어갈 때 call by value로 넘어감(복사)
+mutable object
+ex) list, dict, set
+mutalbe한 오브젝트가 argument로 넘어가면 object reference가 넘어가서 담고 있는 값을 바꿀 수 있음
+call by reference를 하고 싶다면, mutable 형태의 객체로 넘기거나,
+class의 멤버 변수로 관리하여 접근을 용이하게 하는 방법 등이 있음
+
+[ 구글 지오코딩 서비스 요청 URL ]
+https://maps.googleapis.com/maps/api/geocode/json?address=%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EC%82%BC%EC%84%B1%EB%8F%99%20160-21&key=AIzaSyDy81EbO46BRSnX1DOgg_F84bhsdbku2z4
+	
+
+
+
+  mylist = [10, 20, 30, 40 ]
+
+  for data in mylist :
+        print(data)
+
+  for index in range(len(mylist)) :
+        print((index+1), "번째 원소", mylist[index])
+
+    (1) 함수의 매개변수 가변 키워드 아규먼트를 전달받게 - **p
+    (2) 비어있는 딕셔너리 자료구조를 하나 생성 - d = { } 
+    (3) if len(p) == 0,  if not len(p), if not p   ---> return d
+    (4) 
+          for k, v in d.items() :
+              d["my"+k] = v
+     
+
+
+UnicodeDecodeError: 'cp949' codec can't decode byte 0xec in position 0: illegal multibyte sequence
+
+
+s = "한글"
+u = str(s, "utf-8")
+
+'p', 'y', 't', 'h', 'o', 'n'
+
+   v1 = [10, 20]
+   v2, v3 = [10, 20]
+
+
+
+
+   1급 객체 : 함수 호출시 아규먼트로 전달되어 매개변수로 사용 가능한 데이터
+                  대입 연산자(=)로 변수에 대입될 수 있는 데이터
+                  ------> 함수(python, javacsiprt, R...)
+
+                 def func1([매개변수...]) :
+       	    코드블럭
+
+	func1([아규먼트...])
+ 	v1 = func1
+   	v1([아규먼트...])
+                 v2 = func1
+                 v3 = v2
+
+                	def myf(*p, f="**" )
+
+
+    
+         람다 함수 : 익명함수, 어딘가에 전달하는 목적으로 만들어지는 함수로서 
+                          	lambda [매개변수..] : 리턴값을 위한식
+
+      def flunk(s):
+          return s < 60
+
+     score = [ 45, 89, 72, 53, 94 ]
+     for s in filter(lambda s : s < 60, score):
+         print(s)
+
+     def half(s):
+         return s / 2
+
+     score = [ 45, 89, 72, 53, 94 ]
+     for s in map(lambda s : s/2, score):
+         print(s, end = ', ')
+
+  https://www.epochconverter.com/
+
+
+
+
+
+
+
+  Temp
+
+
+try :
+      에러가 발생할 수도 있는 코드 블럭
+except 에러이름1:
+      에러 발생시 수행되는 코드 블럭
+except 에러이름2:
+      에러 발생시 수행되는 코드 블럭
+else :
+      에러가 발생하지 않았을 때 수행되는 코드 블럭
+finally :
+      에러 발생과 관계없이 수행되는 코드 블럭
+
+[ 직접 에러를 발생 ]
+  	raise 에러이름
+
+
+
+   "memo.txt"  ==  "./memo.txt"
+   "../memo.txt"
+   "../../memo.txt"
+   "c:/Temp/memo.txt"
+   "d:/my/memo.txt"
+
+   rb
+   rt
+   r
+
+   모드를 생략하면 기본값은 "r"
+   "r+" 읽고 쓰기를 모두 하겠다.
+
+
+
+  컴퓨터에 사용하는 문자들의 코드값이 정해져 있다. 
+     ASCII - 영문대소문자, 숫자, 특수문자, 공백문자 등 제어문자(0x00~0x7F)
+     
+  한글 ~~~> 70년대~80년대중반 : 컴퓨터마다 한글코드가 달랐다.
+                    1988년 올림픽, 행정전산망, KSC5601완성형한글코드
+                    2바이트-0xB0A1(가)
+   EUC-KR, CP949, KSC5601, ANSI ---> 영문, 한글코드
+
+   1990년대 - unicode - 2바이트 - UTF16
+                       UTF8 - 1~4바이트
+   
+                      
+
+
+http://localhost:8000/edu/first.html
+
+  - <a> 태그
+  - <h1>~<h6>
+  - <img>, <video>, <audio>
+  - <form><input><textarea><select>
+  - <ul>, <ol>
+  - <table><tr><td>
+  - <br><hr>
+  - <header>, <footer>, <section>, <article>, <nav>, <aside> - 웹 페이지의 레이아웃
+  - <div><span> : CSS
+
+  http://localhost:8000/edu/htmlexam/exam1.html
+
+  C:\nginx-1.18.0\html\edu
+  first.html
+
+
+
+
+
+  htmlexam/exam1.html
+  cssexam
+  jsexam
+  jqexam
+
+ block style tag
+ inline style tag
+
+  http://localhost:8000/edu/images/duke.png
+  ----
+  통신규약
+             -------------
+                   서버주소        ---------------------
+                                                  URI - uniform resource identity
+  ------------------------------------------
+                  URL - uniform resource locator
+
+ http://192.168.0.200:8000/edu/htmlexam/exam1.html
+
+
+http://localhost:8000/edu/htmlexam/......?stname=%EA%B0%80%EB%82%98%EB%8B%A4&stpwd=1111&stnum=&stcolor=%23000000&stdate=2020-07-14&stdatetime=2020-07-24T17%3A35
+----------------------------------- ------------------------------------------------------------------------------------------------------------------------------- 
+                  URL String                                                          Query String
+
+
+https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query=%EA%B0%80%EB%82%98%EB%8B%A4+123ABCabc
+
+
+[ 파이썬에서의 _ 역할 ]
+(1) REPL(Read-Eval-Print-Loop)환경에서는 _ 가 마지막으로 수행된 결과를 저장한다.
+(2) 특수한 목적의 메서드나 변수를 만들때 사용한다.
+(3) 언팩킹시 데이터 값을 무시하고 싶을 때 
+
+a, _,_,b, c = [10, 20, 30,40,50]
+print(a,b,c)
+
+a, *_, c = [10, 20, 30,40]
+print(a,c)
+
+(4) 천단위마다 구분하고 싶을 때
+
+print(10_000*10)  -> 100000
+
+
+
+
+
+
+   CSS선택자 {
+        속성명 : 속성값;
+        [ 속성명 : 속성값;..]
+   }
+
+   - CSS 선택자(CSS Selector)
+
+      유니버설 선택자 : *
+      태그선택자
+      그룹선택자
+      ID 선택자
+      CLASS 선택자
+      자식선택자
+      자손선택자
+      형제선택자
+      속성선택자
+      유사선택자 -  CSS선택자:식별자
+
+
+
+
+   #ff0000   ->  #f00
+
+   #00ff00   -> #0f0
+
+   #0000ff   -> #00f
+
+
+  @classmethod 는 쓰임새가 많은 게 확실하지만, @staticmethod 는 사용해야하는 이유를 잘 모르겠다.
+  클래스와 함게 작동하지 않는 함수를 정의하려면, 단지 함수를 모듈에 정의하면 된다. 아마 함수가 클래스를 건드리지는 않지만, 
+  그 클래스와 밀접히 연관되어 있어서 클래스 코드 가까운 곳에 두고 싶을 수는 있을 것이다. 그런 경우에는 클래스의 바로 앞이나 
+   뒤에서 함수를 정의하면 된다. 
+			- 전문가를 위한 파이썬 저자 -
+
+
+
+
+   파이썬 소스 : 스크립트 파일로 실행한다 
+                       모듈로 실행한다.
+
+     HTML5,CSS3, JavaScript, jQuery, react, vue, angular  ------------ Django, Flask, Servlet, JSP, PHP, ASP, Spring MVC
+
+
+
+
+  E:nth-child(n)  :   부모의  n 번째 자식인, E 요소
+  E:nth-of-type(n) : 같은 유형의 형제 태그중 n번째인, E 요소
+
+<div>
+<h3>어린 왕자</h3>
+<p>1장 </p>
+<p>2장 </p>
+</div>
+
+p:nth-child(2) {color:red;} 라고 하면 <p>1장 </p>이 빨간색으로 표시
+p:nth-of-type(2) {color:red;}일 경우 <p>2장 </p>가 빨간색으로 표시
+
+
+https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyDy81EbO46BRSnX1DOgg_F84bhsdbku2z4&address=%EC%84%9C%EC%9A%B8
+
+
+ 프로그래밍 언어 - 파이썬, 자바스크립트, R
+                           ------------------ 인터프리터 언어
+                                       HTML 보완
+                                       브라우저에서만 수행    
+                                       - HTML 태그의 반복처리
+                                       - 웹 페이지의 동적인 처리
+                                       1996년(Java, JavaScript)
+                                       ------------------------> ECMA
+                                                                                         ---> ECMAScript
+                                       Node.js - Web Server 프로그램
+
+ - 데이터 타입
+ - 변수 생성 방법
+ - 연산자
+ - 제어문
+ - 함수정의 방법, 호출방법
+ - OOP 관련 구문
+
+ - 표준 API
+ - BOM(Browser Object Model)
+ - DOM(Document Object Model), 이벤트 핸들러 구현방법
+
+
+
+
+
+  ++10
+
+  변수에만 가능
+  전위형과 후위형
+
+  v = 10
+  r = ++v (변수의 값을 1 증가시키는 것을 먼저해라)
+
+  v = 10
+  r = v++ (변수의 값을 1 증가시키는 것을 나중에해라)
+
+
+
+
+ for (var 변수 in 객체) {
+
+ }
+
+ for(초기식;조건식;증감식) {
+
+
+ }
+
+ for data in range(1,11) :
+      print(data)
+
+ for (var data=1; data < 11; data++) 
+      document.write(data)  
+
+ [ 자바스크립트의 함수 정의 방법 ]
+
+ function  함수명([매개변수... ]) {
+
+
+ }
+
+ var 변수명 = function ([매개변수... ]) {
+
+
+ }
+
+
+
+
+
+
+  new 생성자함수호출식
+
+  new Date()
+  new Date(2010, 7, 10)
+
+  {
+     속성명 : 속성값, 속성명 : 속성값, 속성명 : 속성값, ......
+  }
+
+  var me = {
+	     name : "유니코",
+                     age : 20,
+                     food : ["떡볶이", "갈비", "치킨"],
+                     address : {
+                                        sido : "경기도",
+                                        dong : "신현리"
+                                     }     	    	
+                  }
+
+
+    me.age
+    me.food[1]
+    me.address.dong
+  
+
+
+
+ 3.141592
+
+ 3.141592.toFixed(2)
+
+ "abc".charAt(1)
+
+
+
+
+
+
+
+
+ - 기본 API : 생성자 함수
+                   Date(), Array()
+                   Math(), JSON(),....
+
+ - BOM(Browser Object Model)
+    -----------------> 브라우저가 제공하는 내장 객체
+    window, document, location, history, navigator, screen
+
+    GML(IBM, 문서 내용을 출력하는 용도로 만든 마크업 언어, 출판) -> SGML
+                                                                                                  ------> HTML, XML
+
+
+  [ 이벤트 모델 ]
+  DOM 객체에서 이벤트가 발생했을 때 수행되는 코드를 개발하여 해당 DOM 객체에 연결하는 개발 방법
+
+  이벤트 : 웹 페이지 상에서 발생하는 어떠한 작업
+  이벤트타입 : 이벤트의 종류(click, load, mouseover, keyin, change, submit....)
+  이벤트핸들러 : 이벤트가 발생했을 때 수행되는 코드
+  이벤트타겟 : 이벤트가 발생된 대상 DOM 객체(태그, 문서)
+
+  - 인라인 이벤트 모델 - 지역적
+     태그에 속성으로 구현
+     <button onclick="......">xxx</button>
+  - 고전 이벤트 모델 - 전역적
+     이벤트 핸들러를 등록하려는  DOM 객체를 찾아서 변수에 담는다.(dom)
+     dom.onxxxx = function() { ....................... }
+     xxxx : 이벤트 타입(소문자)
+  - 표준 이벤트 모델 - 전역적
+     이벤트 핸들러를 등록하려는  DOM 객체를 찾아서 변수에 담는다.(dom)
+     dom.addEventListener("이벤트타입명", 함수)
+     dom.addEventListener("click", function() { ......... })
+
+     dom.onxxxx = function() { ....................... }
+     dom.onxxxx = function() { ....................... }
+
+     dom.addEventListener("click", function() { ......... })
+     dom.addEventListener("click", function() { ......... })
+     
+
+
+  [ jQuery API 를 이용하여 구현하려면 ]
+
+       자바스크립트객체를 jQuery 객체로 변경해야 한다.(래핑한다.)
+
+              jQuery() 함수를 이용한다.
+             
+              jQuery(document)  ---> jQuery()  --> $()
+
+              	$(자바스크립트객체)
+         	$('CSS선택자')
+               	$('HTML태그문자열')
+                $(함수)
+
+                $('CSS선택자').html() 
+	$('CSS선택자').text()
+	$('<FORM>태그의서브태그에대한선택자').val()
+	$('CSS선택자').css()
+	$('CSS선택자').attr()
+	$('CSS선택자').click(함수)
+
+	$.ajax(), $.getJSON(), $.get(), $.post(), $('CSS선택자').load("....url......")
+	$.each()
+
+	$('CSS선택자').html()  
+	(1) getter : $('CSS선택자').html()  
+	(2) setter : $('CSS선택자').html(value), $('CSS선택자').html(함수)    
+
+             	$('CSS선택자').css(), $('CSS선택자').attr()
+                (1) getter : $('CSS선택자').css("CSS속성명"), $('CSS선택자').attr("HTML태그의속성명")
+          	(2) setter :  (속성명, 속성값)
+		  (속성명, 함수)
+		  ( 자바스크립트객체 ) - ( { 속성명:속성값, 속성명:속성값,....  } )
+
+                sec, width
+
+	data-xxx
+
+	$(....).이벤트타입명(함수)
+	$(....).on("이벤트타입명", 함수) - $(....).off()
+               	$(....).one("이벤트타입명", 함수)
+	$(함수)
+
+                <button data-index="0">이미지 1</button>
+                <button data-index="1">이미지 1</button>
+			:
+
+구글맵 API 도큐먼트 : https://developers.google.com/maps/documentation/javascript/overview?hl=ko
+리플렛 API 도큐먼트 : https://leafletjs.com/
+
+JSON Viewer : http://jsonviewer.stack.hu/
+
+$('CSS선택자').each(함수)
+
+$.each(자바스크립트객체, 함수)
+
+
+
+
+
+https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query=python
+
+
+
+         
+ (1) 테이블 생성
+     create table 테이블이름 (
+         컬럼명 컬럼타입, 
+         컬럼명 컬럼타입, 
+         컬럼명 컬럼타입, 
+                  :
+     )
+     drop table 테이블이름   --> 테이블 삭제
+ (2) 데이터 삽입(C)
+      insert into 테이블명 [(컬럼명리스트)] values (값리스트)
+ (3) 데이터 삭제(D)
+      delete from 테이블명  - 전체행 삭제
+      delete from 테이블명  where 조건식
+ (4) 데이터 수정(U)
+      update 테이블명 set 컬럼명 = 새로운값[, 컬럼명 = 새로운값..] - 전체행 수정
+      update 테이블명 set 컬럼명 = 새로운값[, 컬럼명 = 새로운값..] where 조건식
+ --------------------------- DML(Data Manipulation Language)      
+ (5) 데이터 조회(R)
+      select 컬럼명리스트 from 테이블명
+      select * from 테이블명  
+      select 컬럼명리스트|* from 테이블명 where 조건식
+      select 컬럼명리스트|* from 테이블명 [where 조건식] order by 정렬기준이되는컬러명
+
+
+
+
+
+
+
+
+
+
+
+
+
+                             
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- 장고 프로젝트 만들기 :
+- 앱 만들기 :
+- 서버 기동하기 :
+
+
+  secondapp/static/images
+
+
+
+
+
+
+
+
+
+
+  http://localhost:8000/secondapp/exam2/?info1=django&info2=css&info3=javascript
+
+  http://localhost:8000/secondapp/exam2/
+
+ http://localhost:8000/secondapp/exam2_1/?info1=apple&info2=banana&info3=grape
+
+
+  https://docs.djangoproject.com/en/3.1/ref/templates/builtins/
+
+
+
+
+
+
+(1) thirdapp 이라는 새로운 장고앱을 만든다.
+(2) 설정파일에 thirdapp 을 앱으로 등록한다.
+(3) 장고프로젝트의 urls.py 파일에 thirdapp에 대한 매핑으로 include 방식으로 등록한다.
+
+python  manage.py  migrate  --fake  앱이름  zero
+- URL  태그
+
+[ 프로젝트의 urls.py ]
+
+path('myapp/', include('myapp.urls'))
+
+[ myapp 의 urls.py ]
+path('myview/<int:id>/', views.myview,  name='myview')
+
+{% url 'myview' 모델객체.id %}
+
+   /myapp/myview/모델객체에서추출된ID값		
+
+
+- redirect
+
+    return redirect('some-view-name', foo='bar')
+    return redirect('/some/url/')
+    return redirect('https://example.com/')
+
+http://localhost:8000/forthapp/uu/?pk=1
+
+
+[ 파일 업로드시 settings.py 수정 ]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,  'media')
+
+
+
+
+계정명 : admin
+패스워드 : 1234
+ 강사컴 접근시 : 계정 - i
+                         비밀번호 - unico
+
+
+
+ 오후 1시 40분 : 프로젝트 개발 계획서 조별 발표
+
+[ 발표순서 ]
+1   -  5조
+2  -  2조
+3  -  3조
+4  -  4조
+5  -  7조
+6  -  6조
+7  -  1조
+
+-  8 월 19일
+   자유롭게 팀별 프로젝트 진행
+   쉬는 시간 : 매시 15분~25분
+   점심 시간 : 12시 20분~ 1시 30분
+
+- 강사에게 질문할 내용
+   조별 TO강사 폴더를 활용
+
+- 오늘부터 강사와 개인면담 진행합니다.
+   10시 40분 - 김민영
+   11시 - 박성준
+   1시 40분 - 이동규
+   2시 - 홍연화
+   2시 40분 - 이상지
+
+
+
+
+
+
+
+
+[ 학습관련 파일을 공유할 네이버 클라우드 ]
+
+http://naver.me/FIrQV9zU
+( 암호 : 0831 )
+
+
+discode 유니코's 서버 초대 링크 : https://discord.gg/5NxyEEt
+
+
+#content > div:nth-child(5) > table > tbody > tr:nth-child(1) > td:nth-child(1) > div.challengeInfo > h6 > a
+#content > div:nth-child(5) > table > tbody > tr:nth-child(1) > td:nth-child(3) > div.challengeInfo > h6 > a
+#content > div:nth-child(5) > table > tbody > tr:nth-child(1) > td:nth-child(5) > div.challengeInfo > h6 > a
+
+
+//*[@id="main-top01-scroll-in"]/div[1]/div/h4/a
+
+
+ 
+정적 웹페이지 수집 ---> Open API 를 활용한 공공DB와 SNS 데이터 수집 --> 동적 웹페이지 수집
+                                    --------
+                                       (1) 함수, 클래스......  : API - Application Programming Interface --> Open --> Free
+
+                                       (2) URL 문자열(Web세상) : 필요한 데이터 요청하고 받아갈 수 있게 지원하는 URL 문자열
+                                            - 인증키, Query 문자열 등을 필요로 한다.
+                                            - 요청 헤더에 규격정보를 제공해야 할 수도 있다.
+
+
+
+
+
+
+java -Dwebdriver.chrome.driver="chromedriver.exe" -jar selenium-server-standalone-4.0.0-alpha-1.jar -port 4445
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+영화 제목 -- #old_content > table > tbody > tr:nth-child(1) > td.title > a.movie.color_b
+	    //*[@id="old_content"]/table/tbody/tr[1]/td[2]/a[1]
+	    #old_content > table > tbody > tr:nth-child(2) > td.title > a.movie.color_b
+	    #old_content > table > tbody > tr:nth-child(3) > td.title > a.movie.color_b
+
+----------------> .movie만 적어도 찾을 수 있음
+
+별점 -- #old_content > table > tbody > tr:nth-child(1) > td.title > div > em
+
+----------------> td.titile em
+
+리뷰 -- //*[@id="old_content"]/table/tbody/tr[1]/td[2]/text()
+          //*[@id="old_content"]/table/tbody/tr[3]/td[2]/text()
