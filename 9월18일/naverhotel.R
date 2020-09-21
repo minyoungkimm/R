@@ -8,7 +8,7 @@ pageLink <- NULL
 reple <- 0
 curr_PageOldNum <- 0
 
-body > div > div.ng-scope > div.container.ng-scope > div.content > div.hotel_used_review.ng-isolate-scope > div.review_ta.ng-scope > div.paginate > span:nth-child(3) > strong
+
 repeat{
   doms <- remDr$findElements(using = "css selector", ".review_desc > p")
   Sys.sleep(1)
