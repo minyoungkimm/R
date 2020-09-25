@@ -52,7 +52,7 @@ alnum2
 # 문제9
 txt <- "Good Morning"
 txt_v <- unlist(strsplit(x= txt, split= " "))
-txt_l <- list(txt_v[1],txt_v[2])
+txt_l <- strsplit(txt_v," ")
 txt_l
 
 
@@ -60,17 +60,22 @@ txt_l
 kfpanda <-c("Yesterday is history, tommrrow is a mystery, today is a gift!", 
         "That's why we call it the present - from kung fu Panda")
 
-kfpanda_sub <- gsub(",|-","",x10)
+kfpanda_sub <- gsub(",|-","",kfpanda)
+# 다중공백을 단일 공백으로 만든다.
+kfpanda_sub <- gsub("\\s+"," ",kfpanda_sub)  #"\\s{2,}"도 가능(공백 두개 이상)
 kfpanda_split <- unlist(strsplit(x = kfpanda_sub,split = " "))
 kfpanda_split
 
 
 # 문제11
 ssn <- c("941215-1234567", "850605-2345678", "760830-1357913")
-list <- unlist(strsplit(x = ssn, split = "-"))
-b_list <- list[seq(1,length(list),2)]
+splitlist <- unlist(strsplit(x = ssn, split = "-"))
+b_list <- splitlist[seq(1,length(list),2)]
 replace_ssn <- paste(b_list,"*******",sep="-")
 replace_ssn
+# [ver.2]
+substr(ssn,nchar(ssn)-6,nchar(ssn)) <- "*******"
+print(ssn)
 
 
 # 문제12
@@ -80,6 +85,6 @@ r1 <- gsub("[ㄱ-힣]","",s1)
 #(2)
 r2 <- gsub("[[:punct:]]","",s1)
 #(3)
-r3 <- gsub("[[:punct:]ㄱ-힣]","",s1)
+r3 <- gsub("[[:punct:]ㄱ-힣]","",s1) #[[:punct:]]|가-힣
 #(4)
 r4 <- gsub("100","백",s1)

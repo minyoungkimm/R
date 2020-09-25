@@ -12,6 +12,10 @@ head(emp)
 
 # 문제0
 emp$comm <- ifelse(emp$comm < 0, NA, emp$comm)
+# emp %>% 
+#    mutate(comm = ifelse(comm < 0 ,NA, comm), 
+#    mgr = ifelse(mgr < 0, mgr)) -> emp
+
 
 # 문제1
 emp %>% filter(job == "MANAGER")
@@ -62,18 +66,19 @@ empnew <- emp %>% rename("salary"="sal","commrate"="comm")
 
 # 문제13
 emp %>% 
-  group_by(deptno) %>% 
-  summarise(n=n()) %>% 
-  arrange(desc(n)) %>% 
+  group_by(deptno) %>%  #count(deptno)
+  summarise(n=n()) %>%  #arrange(n)
+  arrange(desc(n)) %>%  #tail(1)
   head(1)
 
 # 문제14
 emp %>% 
   mutate(enamelength = nchar(ename)) %>% 
-  arrange(enamelength)
+  arrange(enamelength) %>% 
+  select(ename)
 
 
 # 문제15
 emp %>% 
-  filter(comm != "NA") %>% 
-  summarise(comm_count=n())
+  filter(!is.na(comm)) %>% 
+  summarise(comm_count=n()) #nrow(),count,tally...
